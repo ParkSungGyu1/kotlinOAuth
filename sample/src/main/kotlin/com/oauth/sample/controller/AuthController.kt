@@ -20,6 +20,7 @@ class AuthController(
      */
     @GetMapping("/login")
     fun login(@AuthenticationPrincipal oAuth2User: OAuth2User): ResponseEntity<JwtDto> {
+        //이거 추가됨!!!
         return ResponseEntity.ok(authService.login(oAuth2User))
     }
 }
